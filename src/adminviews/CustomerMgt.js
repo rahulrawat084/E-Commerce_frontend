@@ -88,7 +88,7 @@ function CustomerMgt(){
         try{
             setLoading(true);
             const res=await axios.put(
-                `http://localhost:9876/customer/update/${selectedCustomer.Cid}`,
+                `${process.env.REACT_APP_BACKEND_URL}/customer/update/${selectedCustomer.Cid}`,
                 data, {headers:{"Content-Type":"multipart/form-data"}}
             );
             alert("Profile updated Successfully!");
@@ -116,11 +116,11 @@ function CustomerMgt(){
         setCustomerList((prev)=>
         prev.map((c)=> (c.Cid===cid ? {...c, Status: newStatus} : c)));
 
-        axios.get(`http://localhost:9876/customer/getcustomerdetails/${cid}`)
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/customer/getcustomerdetails/${cid}`)
         .then((res)=>{
             const email=res.data.CEmail;
 
-            axios.put(`http://localhost:9876/customer/customermanage/${cid}/${newStatus}`)
+            axios.put(`${process.env.REACT_APP_BACKEND_URL}/customer/customermanage/${cid}/${newStatus}`)
             .then(()=>{
                 const subject= newStatus==="Active" ? "Login Activation" : "Login Deactivation";
                 const message=newStatus==="Active" ? 
@@ -128,7 +128,7 @@ function CustomerMgt(){
                 : "Your ID is deactivated by Admin.You can not Login.";
 
                 axios.post(
-                    `http://localhost:9876/emailactivation/sendemails/${email}/${subject}/${message}`
+                    `${process.env.REACT_APP_BACKEND_URL}/emailactivation/sendemails/${email}/${subject}/${message}`
                 ).catch((err)=>console.error(err));
 
                 // axios.post("http://localhost:9876/emailactivation/send",{ email: message, subject: "Login Activation",  message: "Your ID is activated by Admin. You can login now."});
