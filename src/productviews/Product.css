@@ -1,0 +1,196 @@
+/* Container & Heading */
+.prod-container {
+    padding: 30px;
+    background: linear-gradient(135deg, #1a1a2e, #162447);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e0e0e0;
+}
+
+.prod-heading {
+    text-align: center;
+    font-size: 2rem;
+    color: #f9f871;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px #000;
+}
+
+/* Product Form */
+.prod-form {
+    max-width: 700px;
+    margin: auto;
+    background: #1f1f2e;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    border: 1px solid #444;
+}
+
+.prod-subheading {
+    font-size: 1.5rem;
+    color: #4ecdc4;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Form Fields */
+.prod-form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.prod-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #f0f0f0;
+}
+
+.prod-input, .prod-select, .prod-file-input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background: #2c2c3e;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.prod-input:focus, .prod-select:focus, .prod-file-input:focus {
+    outline: none;
+    border-color: #4ecdc4;
+    box-shadow: 0 0 5px #4ecdc4;
+}
+
+.prod-preview {
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 2px solid #4ecdc4;
+}
+
+/* Buttons */
+.prod-btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.prod-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.prod-btn-new {
+    background: #f7b267;
+    color: #1f1f2e;
+}
+
+.prod-btn-new:hover {
+    background: #ff9f1c;
+    transform: translateY(-2px);
+}
+
+.prod-btn-save {
+    background: #4ecdc4;
+    color: #1f1f2e;
+}
+
+.prod-btn-save:hover {
+    background: #38b2ac;
+    transform: translateY(-2px);
+}
+
+.prod-btn-upload {
+    background: #ff6b6b;
+    color: #fff;
+}
+
+.prod-btn-upload:hover {
+    background: #ff4757;
+    transform: translateY(-2px);
+}
+
+.prod-btn-edit {
+    background: #f9f871;
+    color: #1f1f2e;
+}
+
+.prod-btn-edit:hover {
+    background: #ffd60a;
+}
+
+.prod-btn-delete {
+    background: #ff4b5c;
+    color: #fff;
+}
+
+.prod-btn-delete:hover {
+    background: #e63946;
+}
+
+/* Product List Table */
+.prod-list-heading {
+    text-align: center;
+    font-size: 1.7rem;
+    color: #f9f871;
+    margin-top: 30px;
+    text-shadow: 1px 1px 5px #000;
+}
+
+.prod-list-table-wrapper {
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+.prod-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+.prod-thead {
+    background: linear-gradient(90deg, #4ecdc4, #38b2ac);
+    color: #fff;
+}
+
+.prod-thead th {
+    padding: 12px 8px;
+    font-size: 1rem;
+}
+
+.prod-tr td {
+    padding: 10px 8px;
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+
+.prod-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 2px solid #4ecdc4;
+}
+
+/* Actions Buttons in Table */
+.prod-action-btns {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.prod-action-btns button {
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Hover Effects */
+.prod-tr:hover {
+    background: rgba(78, 205, 196, 0.1);
+}

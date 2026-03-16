@@ -1,0 +1,143 @@
+/* ================= MAIN CONTAINER ================= */
+.pl-container-inner {
+  background: #f1f3f6;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* ================= CUSTOMER INFO (RIGHT TOP – MOVED DOWN) ================= */
+.pl-customer-info {
+  display: flex;
+  justify-content: flex-end;   
+  align-items: center;
+  gap: 15px;
+
+  margin-top: 150px;          /* 🔥 yahin 150px */
+  margin-bottom: 15px;
+}
+
+/* ================= ITEM COUNT ================= */
+.pl-item-count {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ================= CHECKOUT BUTTON (ICON FIXED) ================= */
+.pl-checkout-btn {
+  background: #2874f0;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+
+  display: inline-flex;          /* 🔥 flex but inline */
+  align-items: center;           /* 🔥 vertical center */
+  gap: 8px;                      /* 🔥 icon & text gap */
+  line-height: 1;                /* 🔥 text upar neeche nahi hoga */
+}
+
+.pl-checkout-btn:hover {
+  background: #0f5ad3;
+}
+
+/* ================= CART ICON (SEPARATE & CLEAN) ================= */
+.pl-cart-icon {
+  font-size: 16px;               /* 🔥 thoda bada */
+  line-height: 1;                /* 🔥 text ke upar nahi chadhega */
+  display: inline-block;
+}
+
+/* ================= SEARCH LABEL ================= */
+.pl-search-label {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+/* ================= CATEGORY SELECT ================= */
+.pl-select {
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  font-weight: 600;
+}
+
+.pl-select:focus {
+  border-color: #2874f0;
+}
+
+/* ================= PRODUCT GRID ================= */
+.pl-product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 22px;
+  margin-top: 20px;
+}
+
+/* ================= PRODUCT CARD ================= */
+.pl-product-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+/* ================= PRODUCT IMAGE ================= */
+.pl-product-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* ================= PRODUCT TEXT ================= */
+.pl-product-card h4 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.pl-product-card p {
+  margin-bottom: 8px;
+}
+
+/* ================= BUY / QTY BUTTONS ================= */
+.pl-product-card button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #ff9f00;
+  font-weight: 600;
+}
+
+.pl-product-card button:hover {
+  background: #fb8c00;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .pl-customer-info {
+    justify-content: center;
+    margin-top: 120px;
+  }
+
+  .pl-product-list {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .pl-customer-info {
+    margin-top: 100px;
+  }
+
+  .pl-product-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}

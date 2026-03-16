@@ -1,0 +1,195 @@
+/* ================= ORDER TRACKING MAIN ================= */
+.Ord-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #f5f7fb;
+    border-radius: 14px;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+/* ================= TITLE ================= */
+.Ord-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 22px;
+}
+
+/* ================= LABEL & SELECT ================= */
+.lablee {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.Ord-Bill {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    outline: none;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.Ord-Bill:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+/* ================= ORDER CARD ================= */
+.order_card {
+    margin-top: 25px;
+    padding: 22px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border: 1px solid #e5e7eb;
+}
+
+.order_card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.order_card p {
+    font-size: 14px;
+    color: #374151;
+    margin: 6px 0;
+}
+
+/* ================= STATUS BADGE ================= */
+.status-badge {
+    margin-left: 8px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 999px;
+    background: #e5e7eb;
+    color: #374151;
+}
+
+/* Dynamic status colors */
+.status-Processing,
+.status-OrderPlaced {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.status-Packed,
+.status-Shipped {
+    background: #ede9fe;
+    color: #5b21b6;
+}
+
+.status-OutforDelivery {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.status-Delivered {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-Cancelled {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* ================= PROGRESS BAR ================= */
+.progress-wraperr {
+    margin-top: 22px;
+}
+
+.progress-line {
+    width: 100%;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    transition: width 0.4s ease;
+}
+
+/* ================= PROGRESS STEPS ================= */
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.progress-step {
+    text-align: center;
+    width: 100%;
+    position: relative;
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.progress-step.active {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.ordestrpcirlce {
+    width: 26px;
+    height: 26px;
+    margin: 0 auto 6px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.progress-step.active .ordestrpcirlce {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+/* ================= TIMELINE ================= */
+.ordertimeline {
+    margin-top: 26px;
+    padding-left: 10px;
+}
+
+.ordtimeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    color: #9ca3af;
+}
+
+.ordtimeline-item.completed {
+    color: #111827;
+    font-weight: 500;
+}
+
+.ordmarker {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    margin-right: 10px;
+}
+
+.ordtimeline-item.completed .ordmarker {
+    background: #2563eb;
+}
+
+.ordtimelinecontent {
+    font-size: 14px;
+}

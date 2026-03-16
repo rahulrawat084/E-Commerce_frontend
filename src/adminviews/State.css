@@ -1,0 +1,236 @@
+/* ============================ */
+/*      STATE MANAGEMENT CSS    */
+/* ============================ */
+
+/* MAIN CONTAINER */
+.stateBox_guru {
+    width: 100%;
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #ffffff; /* Light theme background */
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border: 1px solid #e5e5e5;
+    transition: 0.3s;
+}
+
+/* DARK THEME SUPPORT */
+.stateBox_guru.dark {
+    background: #1c1c1c;
+    color: #f0f0f0;
+    border: 1px solid #333;
+}
+
+/* TABLE LABELS */
+.stateLabel_id_guru,
+.stateLabel_name_guru,
+.stateLabel_status_guru {
+    font-weight: 600;
+    color: #333;
+    padding-right: 10px;
+}
+
+.stateBox_guru.dark .stateLabel_id_guru,
+.stateBox_guru.dark .stateLabel_name_guru,
+.stateBox_guru.dark .stateLabel_status_guru {
+    color: #f0f0f0;
+}
+
+/* TABLE COLUMNS */
+.stateCol_id_guru,
+.stateCol_name_guru,
+.stateCol_status_guru {
+    padding: 8px 12px;
+    font-size: 15px;
+}
+
+/* INPUT FIELDS */
+.form-control {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #b5b5b5;
+    font-size: 15px;
+    outline: none;
+    background: #f9f9f9;
+    transition: 0.3s;
+}
+
+.form-control:focus {
+    border-color: #28a745;
+    background: #ffffff;
+}
+
+/* DARK INPUT */
+.stateBox_guru.dark .form-control {
+    background: #2b2b2b;
+    color: #f0f0f0;
+    border: 1px solid #555;
+}
+
+.stateBox_guru.dark .form-control:focus {
+    border-color: #4caf50;
+    background: #333;
+}
+
+/* ============================ */
+/*          BUTTONS             */
+/* ============================ */
+
+/* NEW */
+.btn-new_guru {
+    background-color: #28a745 !important; /* Green */
+    color: #fff !important;
+    border: none !important;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-new_guru:hover {
+    background-color: #218838 !important;
+}
+
+/* SAVE */
+.btn-save_guru {
+    background-color: #17a2b8 !important; /* Blue */
+    color: #fff !important;
+    border: none !important;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-save_guru:hover {
+    background-color: #138496 !important;
+}
+
+/* SHOW */
+.btn-show_guru {
+    background-color: #ffc107 !important; /* Yellow */
+    color: #333 !important;
+    border: none !important;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-show_guru:hover {
+    background-color: #e0a800 !important;
+    color: #fff !important;
+}
+
+/* UPDATE */
+.btn-update_guru {
+    background-color: #fd7e14 !important; /* Orange */
+    color: #fff !important;
+    border: none !important;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-update_guru:hover {
+    background-color: #e8590c !important;
+}
+
+/* DELETE */
+.btn-delete_guru {
+    background-color: #dc3545 !important; /* Red */
+    color: #fff !important;
+    border: none !important;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-delete_guru:hover {
+    background-color: #c82333 !important;
+}
+
+/* ============================ */
+/*          TABLES              */
+/* ============================ */
+.stateBox_table_guru {
+    margin-top: 25px;
+    overflow-x: auto;
+}
+
+.stateBox_table_guru table {
+    width: 100%;
+    border-collapse: collapse;
+    transition: 0.3s;
+}
+
+.stateBox_table_guru th,
+.stateBox_table_guru td {
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Header */
+.stateBox_table_guru th {
+    background-color: #f0f0f0;
+    font-weight: 600;
+}
+
+.stateBox_guru.dark .stateBox_table_guru th {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+/* Cells dark mode */
+.stateBox_guru.dark .stateBox_table_guru td {
+    background-color: #2b2b2b;
+    color: #f0f0f0;
+    border: 1px solid #444;
+}
+
+/* ============================ */
+/*        HOVER EFFECTS         */
+/* ============================ */
+button:hover {
+    transform: scale(0.97);
+    opacity: 0.9;
+    transition: 0.2s;
+}
+
+.stateBox_table_guru tr:hover {
+    background-color: #e9f7ef;
+}
+
+.stateBox_guru.dark .stateBox_table_guru tr:hover {
+    background-color: #444;
+}
+
+/* ============================ */
+/*       RESPONSIVE MOBILE      */
+/* ============================ */
+@media (max-width: 600px) {
+    .stateBox_guru {
+        padding: 15px;
+    }
+    .btn-new_guru,
+    .btn-save_guru,
+    .btn-show_guru,
+    .btn-update_guru,
+    .btn-delete_guru {
+        padding: 10px;
+        font-size: 14px;
+    }
+    .stateBox_table_guru th,
+    .stateBox_table_guru td {
+        padding: 8px 6px;
+        font-size: 12px;
+    }
+
+    
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+   <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>React App</title>
+
+    <!-- ================= INTERNAL CSS FIX ================= -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        line-height: 1.5;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      /* 🔥 MAIN REACT WRAPPER FIX (ROOT CAUSE) */
+      #root {
+        min-height: auto !important;   /* ❌ 100vh / 90vh override */
+      }
+
+      /* 🔥 REACT PAGE WRAPPERS (SPACE FIX) */
+      .plm_main_wrapper,
+      .pl-container-inner {
+        min-height: auto !important;
+        padding-bottom: 10px;
+      }
+
+      /* ================= FOOTER ================= */
+      .footer {
+        background-color: #24262b;
+        padding: 15px 0 10px;
+        margin-top: 10px !important;   /* 🔥 product ke baad kam gap */
+      }
+
+      .container {
+        max-width: 1110px;
+        margin: 0 auto;
+        padding: 0 10px;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      ul {
+        list-style: square;
+        color: #e91e63;
+      }
+
+      .footer-col {
+        width: 25%;
+        padding: 0 15px;
+      }
+
+      .footer-col h4 {
+        font-size: 18px;
+        color: green;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        font-weight: bold;
+        position: relative;
+      }
+
+      .footer-col h4::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        background-color: red;
+        height: 3px;
+        width: 50px;
+      }
+
+      .footer-col ul li:not(:last-child) {
+        margin-bottom: 6px;
+      }
+
+      .footer-col ul li a {
+        font-size: 15px;
+        color: white;
+        text-decoration: none;
+        display: block;
+        transition: all 0.3s ease;
+      }
+
+      .footer-col ul li a:hover {
+        color: pink;
+        padding-left: 6px;
+      }
+
+      .footer-col .social-links a {
+        display: inline-block;
+        height: 36px;
+        width: 36px;
+        background-color: rgba(255,255,255,0.2);
+        margin: 0 8px 8px 0;
+        text-align: center;
+        line-height: 36px;
+        border-radius: 50%;
+        color: white;
+        transition: all 0.4s ease;
+      }
+
+      .footer-col .social-links a:hover {
+        color: #24262b;
+        background-color: #ffffff;
+      }
+
+      /* ================= RESPONSIVE ================= */
+      @media (max-width: 767px) {
+        .footer-col {
+          width: 50%;
+          margin-bottom: 20px;
+        }
+      }
+
+      @media (max-width: 574px) {
+        .footer-col {
+          width: 100%;
+          margin-bottom: 15px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!-- ================= REACT APP ================= -->
+    <div id="root"></div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+
+          <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+              <li><a href="#">about us</a></li>
+              <li><a href="#">our services</a></li>
+              <li><a href="#">privacy policy</a></li>
+              <li><a href="#">affiliate program</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">shipping</a></li>
+              <li><a href="#">returns</a></li>
+              <li><a href="#">order status</a></li>
+              <li><a href="#">payment options</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>online shop</h4>
+            <ul>
+              <li><a href="#">watch</a></li>
+              <li><a href="#">bag</a></li>
+              <li><a href="#">shoes</a></li>
+              <li><a href="#">dress</a></li>
+              <li><a href="#">etc.</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

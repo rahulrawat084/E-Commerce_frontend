@@ -1,0 +1,148 @@
+/* ================= ROOT ================= */
+.mainpage {
+    min-height: 100vh;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    transition: all 0.4s ease;
+}
+
+/* ================= HEADER ================= */
+.main-header {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+}
+
+/* ================= NAV ================= */
+.main-nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: 18px;
+}
+
+/* ================= LINKS ================= */
+.main-nav a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* ================= SEPARATOR ================= */
+.main-nav span {
+    color: #c7cdd6;
+    font-size: 18px;
+}
+
+/* ================= HOVER EFFECT ================= */
+.main-nav a:hover {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+    transform: translateY(-1px);
+}
+
+/* ================= ACTIVE LINK FEEL ================= */
+.main-nav a:active {
+    transform: scale(0.96);
+}
+
+/* ================= THEME TOGGLE BUTTON ================= */
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 15px;
+    font-size: 20px;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.2);
+}
+
+/* ================= LIGHT / DARK / ACCENT MODE ================= */
+.mainpage.light {
+    background: linear-gradient(180deg, #f8fafc, #eef2ff);
+    color: #1e293b;
+}
+
+.mainpage.dark {
+    background: linear-gradient(180deg, #0f172a, #1e293b);
+    color: #f8fafc;
+}
+
+.mainpage.accent {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #ffffff;
+}
+
+/* Apply mode color to nav links */
+.mainpage.light .main-nav a {
+    color: #1e293b;
+}
+
+.mainpage.dark .main-nav a {
+    color: #f8fafc;
+}
+
+.mainpage.accent .main-nav a {
+    color: #ffffff;
+}
+
+/* ================= HOME CONTENT WRAP ================= */
+.mainpage > div + div {
+    padding: 30px 20px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .main-nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 14px;
+    }
+
+    .main-nav a {
+        font-size: 14px;
+        padding: 6px 14px;
+    }
+
+    .main-nav span {
+        display: none;
+    }
+}
+
+/* ================= ADDITIONAL STYLING ================= */
+.mainpage.light .main-header {
+    background: rgba(255,255,255,0.85);
+}
+
+.mainpage.dark .main-header {
+    background: rgba(15,23,42,0.9);
+}
+
+.mainpage.accent .main-header {
+    background: rgba(37,99,235,0.85);
+}
+
+/* Smooth transition for mode change */
+.main-header,
+.main-nav,
+.mainpage > div + div {
+    transition: all 0.4s ease;
+}
+
+

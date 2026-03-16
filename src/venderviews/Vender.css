@@ -1,0 +1,129 @@
+/* Main container */
+.vendContainer_guru {
+    width: 95%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #f2f6fa; /* soft background */
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Heading */
+.vendHeading_guru {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #0d3b66; /* dark blue heading */
+    margin-bottom: 20px;
+}
+
+/* Status message */
+.vendStatus_guru {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ff4500; /* bright status color */
+    margin-bottom: 15px;
+}
+
+/* Input row container */
+.vendRow_guru {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center input */
+}
+
+/* Labels */
+.vendLabel_guru {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+}
+
+/* Input fields */
+.vendInput_guru {
+    width: 90%; /* centered with equal sides */
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.25); /* soft black border */
+    font-size: 14px;
+    outline: none;
+    background: #ffffff;
+    transition: all 0.3s;
+}
+
+.vendInput_guru:focus {
+    border-color: rgba(0,0,0,0.25); /* focus still soft black */
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+/* Image preview */
+.vendPreview_guru {
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+/* Error messages */
+.vendError_guru {
+    color: #ff0033;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* Buttons container */
+.vendActions_guru {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Buttons common */
+.vendBtn_guru {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.25s ease-in-out;
+}
+
+/* Primary - Register */
+.vendBtnPrimary_guru {
+    background-color: #1d4ed8; /* blue */
+    color: white;
+}
+
+.vendBtnPrimary_guru:hover {
+    background-color: #2563eb; /* lighter blue */
+    transform: scale(0.97);
+}
+
+/* Danger - Upload / Delete */
+.vendBtnDanger_guru {
+    background-color: #dc2626; /* red */
+    color: white;
+}
+
+.vendBtnDanger_guru:hover {
+    background-color: #ef4444; /* bright red */
+    transform: scale(0.97);
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+    .vendInput_guru {
+        width: 95%;
+    }
+    .vendActions_guru {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

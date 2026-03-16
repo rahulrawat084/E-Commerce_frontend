@@ -1,0 +1,43 @@
+/* ===== Navbar Container ===== */
+.CustonerMain nav {
+    background-color: #ffffff;
+    padding: 14px 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== UL Center Alignment ===== */
+.CustonerMain nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;   /* CENTER */
+    align-items: center;
+    gap: 20px;                 /* ek ke baad ek spacing */
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== Button Style ===== */
+.CustonerMain nav ul li a {
+    text-decoration: none;
+    font-size: 14.5px;
+    font-weight: 500;
+    padding: 8px 22px;
+    border-radius: 6px;
+    color: #1f2937;
+    background-color: #f8fafc;
+    border: 1px solid #d1d5db;
+    transition: all 0.3s ease;
+}
+
+/* ===== Hover Effect ===== */
+.CustonerMain nav ul li a:hover {
+    background-color: #0a58ca;
+    color: #ffffff;
+    border-color: #0a58ca;
+    box-shadow: 0 4px 12px rgba(10, 88, 202, 0.25);
+}
+
+/* ===== Click Effect ===== */
+.CustonerMain nav ul li a:active {
+    transform: scale(0.96);
+}

@@ -1,0 +1,221 @@
+/* ===========================
+   OVERLAY / DIALOG
+=========================== */
+.div {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* ===========================
+   BILL CARD
+=========================== */
+.bill-card {
+  width: 95%;
+  max-width: 1100px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  padding: 25px 30px;
+  animation: billFadeIn 0.4s ease;
+}
+
+@keyframes billFadeIn {
+  from { transform: scale(0.96); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* ===========================
+   HEADER
+=========================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.header h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+
+.btn-link {
+  background: #f1f3f6;
+  border: 1px solid #dcdcdc;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #2874f0;
+  transition: 0.25s;
+}
+
+.btn-link:hover {
+  background: #e7efff;
+}
+
+/* ===========================
+   BILL META
+=========================== */
+.bill-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  background: #fafafa;
+  padding: 15px 18px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.bill-meta-left div,
+.bill-meta-right div {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.bill-meta strong {
+  display: inline-block;
+  width: 90px;
+  color: #555;
+}
+
+.bill {
+  font-size: 13px;
+  color: #666;
+}
+
+/* ===========================
+   WARNING
+=========================== */
+.bill-warning {
+  background: #fff4e5;
+  border-left: 5px solid #ff9800;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #8a5a00;
+  margin-bottom: 15px;
+  border-radius: 6px;
+}
+
+/* ===========================
+   TABLE
+=========================== */
+.bill-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.bill-table thead {
+  background: #2874f0;
+}
+
+.bill-table thead th {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px;
+  text-align: center;
+}
+
+.bill-table tbody td {
+  padding: 12px;
+  font-size: 14px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+.bill-product-name {
+  text-align: left;
+  font-weight: 600;
+}
+
+/* ===========================
+   QTY CONTROLS
+=========================== */
+.qty-btn {
+  background: #f1f3f6;
+  border: 1px solid #ccc;
+  padding: 3px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.qty-btn:hover {
+  background: #e0e0e0;
+}
+
+.qty-value {
+  margin: 0 10px;
+  font-weight: 600;
+}
+
+/* ===========================
+   REMOVE BUTTON
+=========================== */
+.remove-btn {
+  background: #fff;
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.remove-btn:hover {
+  background: #dc3545;
+  color: #fff;
+}
+
+/* ===========================
+   EMPTY STATE
+=========================== */
+.no-items {
+  padding: 20px;
+  font-size: 15px;
+  color: #777;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+.bll-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.pay-btn {
+  background: #2874f0;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pay-btn:hover {
+  background: #174ea6;
+}
+
+.pay-btn:disabled {
+  background: #9bb7e8;
+  cursor: not-allowed;
+}

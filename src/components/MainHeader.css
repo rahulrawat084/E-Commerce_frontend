@@ -1,0 +1,77 @@
+.main-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 32px;
+  background: #f7f4ee;
+  border-bottom: 1px solid #ddd;
+}
+
+/* LEFT LOGO */
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text-area {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #c0392b;
+}
+
+.logo-tagline {
+  font-size: 13px;
+  color: #555;
+}
+
+/* RIGHT NAV (ARROW WALI JAGAH) */
+.header-nav {
+  display: flex;
+  gap: 26px;
+}
+
+.header-nav a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111;
+}
+
+.header-nav a:hover {
+  color: #c0392b;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .main-header-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

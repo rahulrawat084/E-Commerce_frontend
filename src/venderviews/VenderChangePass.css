@@ -1,0 +1,127 @@
+/* PAGE CONTAINER */
+.vcp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d1b2a, #1b263b); /* Page background - dark blue gradient */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* CARD */
+.vcp-card {
+  background: linear-gradient(145deg, #1e2a47, #2c3e70); /* Card background - slightly lighter blue */
+  padding: 30px 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+  width: 100%;
+  max-width: 450px;
+  color: #fff;
+}
+
+/* HEADING */
+.vcp-heading {
+  text-align: center;
+  color: #00bfff; /* bright blue heading */
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+
+/* ALERTS */
+.vcp-alert {
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.vcp-success { background: #28a745; color: #fff; }
+.vcp-error { background: #dc3545; color: #fff; }
+
+/* LABELS */
+.vcp-label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* INPUTS */
+.vcp-input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #555; /* slightly gray border */
+  background: #223556; /* card input background darker blue */
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
+}
+.vcp-input:focus {
+  border-color: #00bfff;
+  background: #2a3b5a; /* lighter on focus */
+}
+
+/* PASSWORD FIELD */
+.vcp-pass-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.vcp-eye {
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  color: #00bfff;
+}
+
+/* PASSWORD STRENGTH BAR */
+.vcp-strength {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.vcp-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 4px;
+  margin-right: 10px;
+  background: #444;
+  transition: background 0.3s;
+}
+.vcp-level-1 { background: #ff4d4d; }
+.vcp-level-2 { background: #ffb84d; }
+.vcp-level-3 { background: #ffff4d; }
+.vcp-level-4 { background: #32cd32; }
+
+.vcp-strength-label {
+  font-size: 12px;
+  color: #ccc;
+}
+
+/* BUTTON */
+.vcp-btn {
+  width: 100%;
+  padding: 10px;
+  background: #00bfff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+.vcp-btn:hover {
+  background: #00e5ff;
+  transform: scale(0.97);
+}
+
+/* HINT */
+.vcp-hint {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 15px;
+  text-align: center;
+}

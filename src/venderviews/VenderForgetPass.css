@@ -1,0 +1,89 @@
+/* MAIN CONTAINER */
+.vfp-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 25px 30px;
+  background: linear-gradient(135deg, #1e1f29, #2c2f45);
+  border-radius: 15px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+/* HEADING */
+.vfp-heading {
+  font-size: 24px;
+  color: #00bfff;
+  margin-bottom: 25px;
+  text-shadow: 0 0 8px #00bfff;
+}
+
+/* INPUT FIELDS */
+.vfp-input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #2b3456;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.vfp-input:focus {
+  border-color: #00bfff;
+  background: #3a4a7a;
+  box-shadow: 0 0 8px #00bfff;
+}
+
+/* BUTTONS */
+.vfp-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 5px 0;
+  width: 100%;
+  font-size: 15px;
+}
+
+/* PRIMARY BUTTON */
+.vfp-btn-primary {
+  background-color: #00bfff;
+  color: #fff;
+}
+
+.vfp-btn-primary:hover {
+  background-color: #00e5ff;
+  transform: scale(0.97);
+  box-shadow: 0 0 12px #00e5ff;
+}
+
+/* SUCCESS BUTTON */
+.vfp-btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.vfp-btn-success:hover {
+  background-color: #3ed35a;
+  transform: scale(0.97);
+  box-shadow: 0 0 12px #3ed35a;
+}
+
+/* CANCEL BUTTON */
+.vfp-btn-cancel {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.vfp-btn-cancel:hover {
+  background-color: #ff4d4d;
+  transform: scale(0.97);
+  box-shadow: 0 0 12px #ff4d4d;
+}

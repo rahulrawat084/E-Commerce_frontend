@@ -1,0 +1,134 @@
+/* ===============================
+   MAIN CONTAINER (SOFT DARK)
+================================ */
+.vh-container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #dfe4ea, #cfd6df);
+  color: #1f2937;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   HEADER / NAVBAR
+================================ */
+.vh-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #2f3640, #353b48);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  margin-bottom: 25px;
+}
+
+/* ===============================
+   AVATAR
+================================ */
+.vh-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid #4cd137;
+  object-fit: cover;
+}
+
+.vh-avatar-shrink {
+  width: 42px;
+  height: 42px;
+}
+
+/* ===============================
+   USER INFO
+================================ */
+.vh-userinfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.vh-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4cd137;
+}
+
+.vh-email,
+.vh-contact {
+  font-size: 14px;
+  color: #dcdde1;
+  margin-top: 2px;
+}
+
+/* ===============================
+   ACTION BUTTONS
+================================ */
+.vh-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.vh-btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
+/* Button themes */
+.vh-btn-edit {
+  background: linear-gradient(135deg, #0984e3, #74b9ff);
+}
+
+.vh-btn-pass {
+  background: linear-gradient(135deg, #e17055, #fab1a0);
+}
+
+.vh-btn-product {
+  background: linear-gradient(135deg, #00b894, #55efc4);
+}
+
+.vh-btn-sales {
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+}
+
+.vh-btn-logout {
+  background: linear-gradient(135deg, #d63031, #ff7675);
+}
+
+.vh-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.45);
+}
+
+/* ===============================
+   MAIN CONTENT AREA
+================================ */
+.vh-content {
+  padding: 26px;
+  background: #f5f6fa;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .vh-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .vh-actions {
+    justify-content: center;
+  }
+}
