@@ -2,7 +2,7 @@
   import React,{useState,useEffect} from "react";
   import EditVenderProfile from "./EditVenderProfile";
   import Product from "../productviews/Product";
-  import Vender_Change_Pass from "./Vender_Change_Pass";
+  import Vender_Change_Pass from "./VenderChangePass";
    import "./VenderHome.css";
    
   import VenderSales from "./VenderSales";
@@ -15,7 +15,7 @@ import InventoryDashboard from "./InventoryDashboard";
      const [venderData,setvenderData]=useState(vender);
      const [isshowproduct,setIsShowProduct]=useState(false);
      const [isShrunk,setIsShrunk]=useState(false);
-     const [isshowsales,setShowSales]=useState('');
+    //  const [isshowsales,setShowSales]=useState('');
      const [isshowvendorsales,setIsShowVendorSales]=useState(false);
      const [isChangePass, setIsChangePass]=useState(false);
      const [isinventory,setIsinventory]=useState(false);

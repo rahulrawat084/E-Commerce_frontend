@@ -200,7 +200,7 @@
         <div className="vendRow_guru">
           <label className="vendLabel_guru">UPLOAD PHOTO</label>
           <input type="file" onChange={handleFileChange} className="vendInput_guru"/>
-          {image.preview && <img src={image.preview} className="vendPreview_guru" height={100} width={100}/>}
+          {image.preview && <img src={image.preview}  alt="vendor image" className="vendPreview_guru" height={100} width={100}/>}
           <span className="vendError_guru">{errors.vpicname}</span>
           <button onClick={handleSubmit} className="vendBtn_guru vendBtnDanger_guru">UPLOAD</button>
         </div>
