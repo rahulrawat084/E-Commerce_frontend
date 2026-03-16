@@ -72,7 +72,7 @@
 
                     alert(res.data.message);
 
-                    onUpdate({... formData,...res.data.updateData});
+                    onUpdate({...formData,...res.data.updateData});
                     onClose();
                  }
                    catch(err)
