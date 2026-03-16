@@ -27,9 +27,9 @@
      useEffect(() => {
         setLoading(true);
 
-        Promise.all([axios.get(`http://localhost:9876/bill/billshowbillids/${props.data}`),
-            axios.get("http://localhost:9876/product/showproduct"),
-            axios.get(`http://localhost:9876/bill/billshowbilldates/${props.data}`),
+        Promise.all([axios.get(`${process.env.REACT_APP_BACKEND_URL}/bill/billshowbillids/${props.data}`),
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/product/showproduct`),
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/bill/billshowbilldates/${props.data}`),
         ]).then(([billRes,prodRes, dateRes]) => {
              setBillIdList(billRes.data);
              setPlist(prodRes.data);
@@ -50,7 +50,7 @@
 
         try
         {
-            const res = await axios.get(`http://localhost:9876/bill/showbillbyid/${selectedId}`);
+            const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/bill/showbillbyid/${selectedId}`);
             setBillDetailsList(res.data);
         } catch(err)
         {
@@ -68,7 +68,7 @@
 
 
         try{
-     const res = await axios.get(`http://localhost:9876/bill/showbillbydate/${selectDate}`);
+     const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/bill/showbillbydate/${selectDate}`);
             
     setBillDetailsList(res.data);
         } catch(err)
@@ -81,7 +81,7 @@
 
           const fetchCustomerDetails = async () => {
             try{
-         const res = await axios.get( `http://localhost:9876/customer/getcustomerdetails/${props.data}`);
+         const res = await axios.get( `${process.env.REACT_APP_BACKEND_URL}/customer/getcustomerdetails/${props.data}`);
 
                     setCustDetails(res.data);
                     return res.data;
@@ -191,7 +191,7 @@
 
                     if(item.ppicname)
                     {
-                        const imgUrl = `http://localhost:9876/product/getproductimage/${item.ppicname}`;
+                        const imgUrl = `${process.env.REACT_APP_BACKEND_URL}/product/getproductimage/${item.ppicname}`;
                         const base64Img = await toDataURL(imgUrl);
                         doc.addImage(base64Img, "JPEG", 160, y -6 , 20 ,20);
                     }
@@ -329,7 +329,7 @@
                                     <td>{bitem.amount}</td>
                                     <td>
                                         <img
-                                            src={`http://localhost:9876/product/getproductimage/${bitem.ppicname}`}
+                                            src={`${process.env.REACT_APP_BACKEND_URL}/product/getproductimage/${bitem.ppicname}`}
                                             height="80"
                                             width="80"
                                             alt="product"
@@ -477,7 +477,7 @@
 //                             <td>{bitem.amount}</td>
 //                             <td>
 
-//                             <img src={`http://localhost:9876/product/getproductimage/${bitem.ppicname}`} height="80" width="80" alt="product"></img>
+//                             <img src={`${process.env.REACT_APP_BACKEND_URL}/product/getproductimage/${bitem.ppicname}`} height="80" width="80" alt="product"></img>
                         
 //                         </td>
 //                         </tr>

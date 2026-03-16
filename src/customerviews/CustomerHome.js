@@ -88,7 +88,7 @@ import EditCustomerProfile from "./EditCustomerProfile";
               height={70}
               width={70}
               style={{ borderRadius: "50%" }}
-              src={`http://localhost:9876/customer/getimage/${user.Cpicname}`}
+              src={`${process.env.REACT_APP_BACKEND_URL}/customer/getimage/${user.Cpicname}`}
               alt="Customer"
               className="ch-avatar"
             />
@@ -222,7 +222,7 @@ import EditCustomerProfile from "./EditCustomerProfile";
   //                   {/* ====TITLE + USER INFO === */}
   //                   <div className="topbar-row1">
   //                     <div className="customer-userinfo">
-  //                          <img height={70} width={70} style={{borderRadius:"50%"}} src={`http://localhost:9876/customer/getimage/${user.Cpicname}`} alt="Customer" className="customer-avatar"></img>
+  //                          <img height={70} width={70} style={{borderRadius:"50%"}} src={`${process.env.REACT_APP_BACKEND_URL}/customer/getimage/${user.Cpicname}`} alt="Customer" className="customer-avatar"></img>
   //                          <span className="customer-welcome">Welcome,{user.cfname}</span>
   //                     </div>
 

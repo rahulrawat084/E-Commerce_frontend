@@ -29,7 +29,7 @@
                 setLoading(true);
 
                 try{
-                    const res = await axios.post("http://localhost:9876/customer/login", 
+                    const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/customer/login`, 
                         {
                             CUserId : uid,
                             CUserPass : upass,

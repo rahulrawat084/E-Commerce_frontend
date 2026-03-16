@@ -14,7 +14,7 @@ function ProductCatMgt(){
     }, []);
 
     const fetchCategoryList = () =>{
-        axios.get("http://localhost:9876/productcatg/showproductcatg")
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/productcatg/showproductcatg`)
         .then((res) => {
             setPCatgList(res.data);
             if(!isEditMode){
@@ -28,7 +28,7 @@ function ProductCatMgt(){
             return;
         }
 
-        axios.post(`http://localhost:9876/productcatg/addproductcatg/${pcatgid}/${pcatgname}`)
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/productcatg/addproductcatg/${pcatgid}/${pcatgname}`)
         .then((res) => {
             alert(res.data);
             setPCatgName("");
@@ -43,7 +43,7 @@ function ProductCatMgt(){
             alert("categort name cannot be empty.");
             return;
         }
-        axios.put(`http://localhost:9876/productcatg/updateproductcatg/${pcatgid}/${pcatgname}`)
+        axios.put(`${process.env.REACT_APP_BACKEND_URL}/productcatg/updateproductcatg/${pcatgid}/${pcatgname}`)
         .then((res) =>{
             alert(res.data);
             setPCatgName("");
@@ -163,7 +163,7 @@ function ProductCatMgt(){
 //             alert ("CATEGORY NAME CANNOT BE EMPTY");
 //             return;
 //           }
-//           axios.post(`http://localhost:9876/productcatg/addproductcatg/${pcatgid}/${pcatgname}`).then((res)=> {
+//           axios.post(`${process.env.REACT_APP_BACKEND_URL}/productcatg/addproductcatg/${pcatgid}/${pcatgname}`).then((res)=> {
 //             alert (res.data);
 //             setPCatgName("");
 //             setIsEditMode(false);
@@ -178,7 +178,7 @@ function ProductCatMgt(){
 //             alert ("CATEGORY NAME CANNOT BE EMPTY.");
 //             return;
 //           }
-//           axios.put(`http://localhost:9876/productcatg/updateproductcatg/${pcatgid}/${pcatgname}`).then((res)=> {
+//           axios.put(`${process.env.REACT_APP_BACKEND_URL}/productcatg/updateproductcatg/${pcatgid}/${pcatgname}`).then((res)=> {
 //             alert (res.data);
 //             setPCatgName("");
 //             setIsEditMode(false);

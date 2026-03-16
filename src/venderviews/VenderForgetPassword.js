@@ -12,7 +12,7 @@
 
          const sendOtp = async () =>{
              try{
-                const res = await axios.post("http://localhost:9876/vender/send-otp", {
+                const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/vender/send-otp`, {
                     VUserId,
                    
                          });
@@ -28,7 +28,7 @@
 
          const resetPassword = async() =>{
             try{
-                const res = await axios.post("http://localhost:9876/vender/reset-password", {
+                const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/vender/reset-password`, {
                     VUserId,
                     otp,
                     newPassword,

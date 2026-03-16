@@ -39,8 +39,8 @@ import "./Venlogin.css";
             try{
                 console.log("vuid"+vuid);
                 console.log("vupass"+vupass);
-               const res= await axios.post('http://localhost:9876/vender/getone',{vuid,vupass});
-            //    const res= await axios.post('http://localhost:9876/vender/getone',{vuid,vupass});
+               const res= await axios.post(`${process.env.REACT_APP_BACKEND_URL}/vender/getone`,{vuid,vupass});
+            //    const res= await axios.post(`${process.env.REACT_APP_BACKEND_URL}/vender/getone`,{vuid,vupass});
                console.log('response data '+res);
                 alert(res.data.VUserId+" "+res.data.Status)
 
@@ -208,7 +208,7 @@ import "./Venlogin.css";
 //             try{
 //                 console.log("vuid"+vuid);
 //                 console.log("vupass"+vupass);
-//                const res= await axios.post('http://localhost:9876/vender/getone',{vuid,vupass});
+//                const res= await axios.post(`${process.env.REACT_APP_BACKEND_URL}/vender/getone`,{vuid,vupass});
 //                console.log('response data '+res);
 //                 alert(res.data.VUserId+" "+res.data.Status)
 

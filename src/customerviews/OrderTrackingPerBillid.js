@@ -26,7 +26,7 @@ function OrderTrackingPerBillId({BillId})
 
   const loadOrder = async (billid) => {
     try{
-      const res = await axios.get(`http://localhost:9876/bill/trackorder/${billid}`);
+      const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/bill/trackorder/${billid}`);
       setOrder(res.data);
     } catch(err)
     {
@@ -133,7 +133,7 @@ export default OrderTrackingPerBillId;
 //      const loadOrder = async (billid) => {
 
 //         try{
-//             const res = await axios.get(`http://localhost:9876/bill/trackorder/${billid}`);
+//             const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/bill/trackorder/${billid}`);
 //              setOrder(res.data);
 //      } catch(err)
 //      {

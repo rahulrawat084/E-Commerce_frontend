@@ -23,14 +23,14 @@
      
 
         useEffect(() =>{
-            axios.get("http://localhost:9876/customer/getcustomercount").then((res)=> setCId(res.data.length+1)).catch((err) => alert(err));
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/customer/getcustomercount`).then((res)=> setCId(res.data.length+1)).catch((err) => alert(err));
 
-            axios.get("http://localhost:9876/state/show").then((res)=> setSList(res.data)).catch((err) => alert(err));
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/state/show`).then((res)=> setSList(res.data)).catch((err) => alert(err));
         },[]);
 
         const handleStIdSelect = (evt) =>{
             setStId(evt.target.value);
-            axios.get("http://localhost:9876/city/showcitybystate/"+evt.target.value).then((res)=> setCtList(res.data)).catch((err)=> alert(err));
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/city/showcitybystate/`+evt.target.value).then((res)=> setCtList(res.data)).catch((err)=> alert(err));
         }
 
         const validateForm = () =>{
@@ -107,7 +107,7 @@
                 
                 let formData = new FormData();
                 formData.append('file', image.data);
-               const res= await fetch("http://localhost:9876/customer/savecustomerimage",{
+               const res= await fetch(`${process.env.REACT_APP_BACKEND_URL}/customer/savecustomerimage`,{
                 method:"POST",
                 body:formData,
                });
@@ -122,7 +122,7 @@
                         setStatus("Failed to Uploaded File");
                     }
 
-                    axios.post("http://localhost:9876/customer/register",obj).then((res)=> {
+                    axios.post(`${process.env.REACT_APP_BACKEND_URL}/customer/register`,obj).then((res)=> {
                         alert(res.data.Message);
                     }).catch((err) =>{
                         if(err.response && err.response.data && err.response.data.Message)

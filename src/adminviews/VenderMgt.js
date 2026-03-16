@@ -19,7 +19,7 @@ function VenderMgt(){
     },[]);
 
     const fetchVenders=()=>{
-        axios.get(`http://localhost:9876/vender/getvendercount`)
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/vender/getvendercount`)
         .then((res)=> setVenderList(res.data))
         .catch(err=> alert(err));
     };
@@ -34,7 +34,7 @@ function VenderMgt(){
             VPicName:null,
             previewImage:
                 vender.VPicName 
-                ? `http://localhost:9876/vender/getimage/${vender.VPicName}`
+                ? `${process.env.REACT_APP_BACKEND_URL}/vender/getimage/${vender.VPicName}`
                 : ""
         });
         setShowModal(true);
@@ -76,7 +76,7 @@ function VenderMgt(){
         if(editForm.VPicName) formData.append("file", editForm.VPicName);
 
         axios.put(
-            `http://localhost:9876/vender/update/${selectedVender.VUserId}`,
+            `${process.env.REACT_APP_BACKEND_URL}/vender/update/${selectedVender.VUserId}`,
             formData
         )
         .then(res=>{
@@ -90,8 +90,8 @@ function VenderMgt(){
     const toggleStatus = (vid,status)=>{
 
         axios.put(
-            // `http://localhost:9876/vender/updatestatus/${vid}/${status==="Active"?"Inactive":"Active"}`
-            `http://localhost:9876/vender/vendermanage/${vid}/${status==="Active"?"Inactive":"Active"}`
+            // `${process.env.REACT_APP_BACKEND_URL}/vender/updatestatus/${vid}/${status==="Active"?"Inactive":"Active"}`
+            `${process.env.REACT_APP_BACKEND_URL}/vender/vendermanage/${vid}/${status==="Active"?"Inactive":"Active"}`
         )
         .then(()=>{
             fetchVenders();
@@ -122,7 +122,7 @@ function VenderMgt(){
                             <td>
                                 {item.VPicName && (
                                 <img 
-                                  src={`http://localhost:9876/vender/getimage/${item.VPicName}`}
+                                  src={`${process.env.REACT_APP_BACKEND_URL}/vender/getimage/${item.VPicName}`}
                                   alt="vendor" width="50"
                                 />
                                 )}

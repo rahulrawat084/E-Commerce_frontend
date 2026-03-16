@@ -25,7 +25,7 @@ import axios from "axios";
       // LOAD ALL BILL IDS
 
       useEffect(() => {
-         axios.get("http://localhost:9876/bill/allbillids").then((res) => setBillIds(res.data)).catch((err) => console.log(err));
+         axios.get(`${process.env.REACT_APP_BACKEND_URL}/bill/allbillids`).then((res) => setBillIds(res.data)).catch((err) => console.log(err));
       },[]);
 
       // LOAD CURRENT STATUS
@@ -33,7 +33,7 @@ import axios from "axios";
       const loadCurrentStatus = () => {
           if(billid)
           {
-            axios.get(`http://localhost:9876/bill/getstatus/${billid}`).then((res) => {
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/bill/getstatus/${billid}`).then((res) => {
                 console.log("res data",res.data.status);
                 setCurrentStatus(res.data.status);
                 setUpdatedAt(res.data.updatedAt);
@@ -60,7 +60,7 @@ import axios from "axios";
 
         if(!window.confirm(`Confirm update status to ":${status}" ?`)) return;
 
-        await axios.put("http://localhost:9876/bill/updatestatus", {
+        await axios.put(`${process.env.REACT_APP_BACKEND_URL}/bill/updatestatus`, {
             billid,
             status,
             updatedBy:updateByName

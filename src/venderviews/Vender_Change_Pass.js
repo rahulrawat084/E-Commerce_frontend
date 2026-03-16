@@ -65,7 +65,7 @@ export default function Vender_Change_pass()
         setLoading(true);
 
         try{
-            const res = await axios.post("http://localhost:9876/vender/changepassword", {
+            const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/vender/changepassword`, {
                 VUserId,
                 OldPassword:oldPassword,
                 newPassword: newPassword,
@@ -332,7 +332,7 @@ export default function Vender_Change_pass()
     //             setLoading(true);
     //             try
     //             {
-    //                 const res = await axios.post("http://localhost:9876/vender/changepassword", {
+    //                 const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/vender/changepassword`, {
     //                     VUserId,
     //                     oldPassword:oldPassword,
     //                     newPassword: newPassword,

@@ -26,7 +26,7 @@
                                          
       const fetchVendorList = async()=>{
         try{
-            const res = await  axios.get("http://localhost:9876/vender/getvendercount/");
+            const res = await  axios.get(`${process.env.REACT_APP_BACKEND_URL}/vender/getvendercount/`);
             setVenderList(res.data);
             setVId(res.data.length + 1);
         }
@@ -103,7 +103,7 @@
                     
                 };
 
-                axios.post("http://localhost:9876/vender/register",obj).then((res)=>{
+                axios.post(`${process.env.REACT_APP_BACKEND_URL}/vender/register`,obj).then((res)=>{
              alert(res.data);
                fetchVendorList();
              }).catch((err)=>
@@ -119,7 +119,7 @@
 
                 try
                 {
-                    const response = await fetch("http://localhost:9876/vender/savevenderimage",{
+                    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/vender/savevenderimage`,{
                         method:"POST",
                         body : formData,
                  } );

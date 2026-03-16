@@ -22,7 +22,7 @@ export default function InventoryDashboard({ vid}) {
         setLoading(true);
         setError(null);
         try{
-            const res = await fetch( `http://localhost:9876/inventory/inventorybyvendor/${vid}`);
+            const res = await fetch( `${process.env.REACT_APP_BACKEND_URL}/inventory/inventorybyvendor/${vid}`);
             if(!res.ok) throw new Error();
             const data = await res.json();
             setItems(Array.isArray(data) ? data : []);
@@ -48,7 +48,7 @@ useEffect(() => {
 useEffect(() => {
     async function fetchProducts() {
         try{
-            const res = await fetch("http://localhost:9876/product/showproduct");
+            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/product/showproduct`);
             if(!res.ok) return;
             const products = await res.json();
             const map = {};
@@ -104,7 +104,7 @@ async function submitEdit(){
         editMode === "set"?{pid:editing.pid, vid: editing.vid, mode:"set", stock:Number(editDelta) }
             :{pid:editing.pid, vid: editing.vid, mode:"inc", delta:Number(editDelta) }
 
-        const res = await fetch("http://localhost:9876/inventory/managestock" , {
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/inventory/managestock` , {
             method : "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(payload),
@@ -132,7 +132,7 @@ async function submitEdit(){
         alert("this will permanatly delete the inventory items:"+inv.pid+""+inv.vid);
         if(!window.confirm("delete inventory permanently")) return;
         try{
-            await fetch(`http://localhost:9876/inventory/deletestock/${inv.pid}/vendor/${inv.vid}`,
+            await fetch(`${process.env.REACT_APP_BACKEND_URL}/inventory/deletestock/${inv.pid}/vendor/${inv.vid}`,
                 // {mehtod : "DELETE"}
                 {method: "PATCH"}
             );
@@ -190,7 +190,7 @@ async function submitEdit(){
                         <div className="inv-product">
                             {product?.ppicname && (
                                 <img height={50} width={50} 
-                                src={"http://localhost:9876/product/getproductimage/" + product.ppicname} alt="" />
+                                src={`${process.env.REACT_APP_BACKEND_URL}/product/getproductimage/` + product.ppicname} alt="" />
                             )}
                         <div>
 

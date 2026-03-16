@@ -25,7 +25,7 @@
 
        useEffect(()=>{
          getNewPid();
-         axios.get("http://localhost:9876/productcatg/showproductcatg")
+         axios.get(`${process.env.REACT_APP_BACKEND_URL}/productcatg/showproductcatg`)
          .then(res => setPCatgList(res.data)).catch(err => alert(err));
        },[]);
 
@@ -34,7 +34,7 @@
        const fetchProducts  = () =>{
         if(venderid)
         {
-        axios.get(`http://localhost:9876/product/showproductbyvender/${venderid}`)
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/product/showproductbyvender/${venderid}`)
         .then(res => setPList(res.data))
         .catch(err => alert(err));    
         }
@@ -47,7 +47,7 @@
          // GET NEW PRODUCT ID
 
          const getNewPid = () =>{
-            axios.get("http://localhost:9876/product/getmaxpid")
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/product/getmaxpid`)
             .then(res => setPId(res.data.length + 1))
             .catch(err => alert(err));
          };
@@ -75,7 +75,7 @@
             formData.append("file",image.data);
 
             try{
-                const response = await fetch("http://localhost:9876/product/saveproductimage", {
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/product/saveproductimage`, {
                     method:"POST" , body: formData
                 });
 
@@ -91,7 +91,7 @@
 
     if(isEditing)
     {
-        axios.put(`http://localhost:9876/product/updateproduct/${pid}`,obj)
+        axios.put(`${process.env.REACT_APP_BACKEND_URL}/product/updateproduct/${pid}`,obj)
         .then(() => {
             alert("PRODUCT UPDATED");
             fetchProducts();
@@ -101,7 +101,7 @@
     }
     else
     {
-        axios.post("http://localhost:9876/product/saveproduct/",obj)
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/product/saveproduct/`,obj)
         .then(() => {
             alert("PRODUCT SAVED");
             fetchProducts();
@@ -116,7 +116,7 @@
 
                   //  let Createinventory = () => {
                   //   let obj1 = {pid:pid,vid:venderid}
-                  //   axios.post("http://localhost:9876/inventory/createinventory",obj1).then(res => {alert(res.message);
+                  //   axios.post(`${process.env.REACT_APP_BACKEND_URL}/inventory/createinventory`,obj1).then(res => {alert(res.message);
                   //     console.log("inventory API",res.message);
                   //   }).catch(err => console.log(err))
                   //  }
@@ -147,7 +147,7 @@
             setOPrice(item.oprice);
             setPPicName(item.ppicname); 
             setPCatgId(item.pcatgid);
-            setImage({preview: `http://localhost:9876/getimageproduct/${item.ppicname}`,data:""})
+            setImage({preview: `${process.env.REACT_APP_BACKEND_URL}/getimageproduct/${item.ppicname}`,data:""})
           setIsEditing(true);
           };
 
@@ -156,7 +156,7 @@
            const handleDelete=(pid)=>{
             if(!window.confirm("DELETE THIS PRODUCT?")) return;
 
-            axios.put(`http://localhost:9876/product/updateproductstatus/${pid}/Inactive`)
+            axios.put(`${process.env.REACT_APP_BACKEND_URL}/product/updateproductstatus/${pid}/Inactive`)
             .then(() => { alert("PRODUCT DELETED"); fetchProducts(); })
             .catch(err => alert(err));
            };
@@ -249,7 +249,7 @@
               <td>{pcatglist.find(c => c.pcatgid === item.pcatgid)?.pcatgname || "N/A"}</td>
               <td>
                 <img 
-                  src={`http://localhost:9876/product/getproductimage/${item.ppicname}`} 
+                  src={`${process.env.REACT_APP_BACKEND_URL}/product/getproductimage/${item.ppicname}`} 
                   alt={item.pname} 
                   className="prod-img" 
                 />
@@ -331,7 +331,7 @@
 //                         <td>{item.pprice}</td>
 //                         <td>{item.oprice}</td>
 //          <td>{pcatglist.find(c => c.pcatgid === item.pcatgid) ?. pcatgname || "N/A" }</td>
-//           <td><img src={`http://localhost:9876/product/getproductimage/${item.ppicname}`} alt={item.pname} width="60" height="60" style={{borderRadius: "6px"}}></img></td>
+//           <td><img src={`${process.env.REACT_APP_BACKEND_URL}/product/getproductimage/${item.ppicname}`} alt={item.pname} width="60" height="60" style={{borderRadius: "6px"}}></img></td>
 
 //              <td>
 //                 <button onClick={() => handleEdit(item)}>Edit</button>

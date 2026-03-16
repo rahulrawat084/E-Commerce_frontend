@@ -39,7 +39,7 @@ import InventoryDashboard from "./InventoryDashboard";
     {/* VENDER INFO HEADER */}
     <div className="vh-header">
       <img
-        src={`http://localhost:9876/vender/getimage/${venderData.VPicName}`}
+        src={`${process.env.REACT_APP_BACKEND_URL}/vender/getimage/${venderData.VPicName}`}
         alt="Vendor"
         className={`vh-avatar ${isShrunk ? "vh-avatar-shrink" : ""}`}
       />
@@ -124,7 +124,7 @@ import InventoryDashboard from "./InventoryDashboard";
 
 //          <div className="sty2"
 //          >
-//             <img src={`http://localhost:9876/vender/getimage/${venderData.VPicName}`} alt="Vendor" width={isShrunk ? 40 : 70}
+//             <img src={`${process.env.REACT_APP_BACKEND_URL}/vender/getimage/${venderData.VPicName}`} alt="Vendor" width={isShrunk ? 40 : 70}
 //              height={isShrunk ? 40 : 70} style={{borderRadius : "50%", transform:"all 0.3 ease"}}></img>
             
 //               <div>
@@ -292,7 +292,7 @@ import InventoryDashboard from "./InventoryDashboard";
 //                     {/* VENDER INFO */}
 
 //          <div style={{display:"flex",alignItems:"center",gap:"15px"}}>
-//             <img src={`http://localhost:9876/vender/getimages/${venderData.VPicName}`} alt="Vendor" width={isShrunk ? 40 : 70}
+//             <img src={`${process.env.REACT_APP_BACKEND_URL}/vender/getimages/${venderData.VPicName}`} alt="Vendor" width={isShrunk ? 40 : 70}
 //              height={isShrunk ? 40 : 70} style={{borderRadius : "50%", transform:"all 0.3 ease"}}></img>
             
 //               <div>

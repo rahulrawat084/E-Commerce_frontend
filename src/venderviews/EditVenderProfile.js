@@ -17,7 +17,7 @@
 
          const fetchVendorList = async () =>{
             try{
-                const res = await axios.get("http://localhost:9876/vender/getvendercount");
+                const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/vender/getvendercount`);
                 setVendorList(res.data);
             } catch(err)
             {
@@ -64,7 +64,7 @@
                 {
                     form.append("file",newImage)
                 }
-                const res = await axios.put(`http://localhost:9876/vender/update/${formData.VUserId}`,form,
+                const res = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/vender/update/${formData.VUserId}`,form,
                     // {
                     //     headers:{"Content-Type": "multipart/form-data"}
                     // }
@@ -126,7 +126,7 @@
       <p className="evp-label">Current Image : {formData.VPicName}</p>
       {formData.VPicName && (
         <img 
-          src={`http://localhost:9876/vender/getimage/${formData.VPicName}`} 
+          src={`${process.env.REACT_APP_BACKEND_URL}/vender/getimage/${formData.VPicName}`} 
           alt="Vender" 
           className="evp-current-image" 
         />
@@ -201,7 +201,7 @@
 
           //             <p>Current Image : {formData.VPicName}</p>
           //             {formData.VPicName  && (
-          //               <img src={`http://localhost:9876/vender/getimage/${formData.VPicName}`} alt="Vender" width={100} height={100} style={{borderRadius: "50%"}}></img>
+          //               <img src={`${process.env.REACT_APP_BACKEND_URL}/vender/getimage/${formData.VPicName}`} alt="Vender" width={100} height={100} style={{borderRadius: "50%"}}></img>
           //              )}
           //              <br/>
 

@@ -79,7 +79,7 @@
 
              try
              {
-                const res = await axios.post("http://localhost:9876/customer/changepassword", {
+                const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/customer/changepassword`, {
                       CUserId,
                       OldPassword:oldPassword,
                       NewPassword:newPassword,
