@@ -232,5 +232,55 @@ button:hover {
         font-size: 12px;
     }
 
-    
+    .state-data-table {
+        min-width: 0 !important;
+    }
+
+    .state-data-table tr:first-child {
+        display: none;
+    }
+
+    .state-data-table,
+    .state-data-table tbody,
+    .state-data-table tr,
+    .state-data-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .state-data-table tr {
+        margin-bottom: 12px;
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .state-data-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 14px;
+        text-align: left;
+        border-bottom: 1px solid #eef2f7;
+    }
+
+    .state-data-table td::before {
+        font-weight: 700;
+        color: #1d4ed8;
+    }
+
+    .state-mobile-id::before {
+        content: "State ID";
+    }
+
+    .state-mobile-name::before {
+        content: "State Name";
+    }
+
+    .state-mobile-status::before {
+        content: "Status";
+    }
 }

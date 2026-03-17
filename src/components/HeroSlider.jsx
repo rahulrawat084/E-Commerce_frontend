@@ -38,7 +38,7 @@ export default function HeroSlider() {
     <div className="slider-container">
       <div
         className="slider-wrapper"
-        style={{ transform: `translateX(-${current * 100}vw)` }}
+        style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {slides.map((slide, index) => (
           <div className="slide" key={index}>

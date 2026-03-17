@@ -1,5 +1,6 @@
 import React,{ useState, useEffect } from "react";
 import axios from "axios";
+import "./AdminResponsive.css";
 
 function VenderMgt(){
     const[venderlist,setVenderList]=useState([]);
@@ -100,10 +101,11 @@ function VenderMgt(){
     }
 
    return(
-    <div>
+    <div className="admin-screen-shell">
         <center>
             <h4>Vendor List</h4>
-            <table border={1}>
+            <div className="admin-card-panel admin-table-wrap">
+            <table border={1} className="admin-data-table vendor-data-table">
                 <thead>
                     <tr>
                         <th>Photo</th>
@@ -119,7 +121,7 @@ function VenderMgt(){
                 <tbody>
                     {venderlist.map(item=>(
                         <tr key={item.Vid}>
-                            <td>
+                            <td className="vendor-mobile-photo">
                                 {item.VPicName && (
                                 <img 
                                   src={`${process.env.REACT_APP_BACKEND_URL}/vender/getimage/${item.VPicName}`}
@@ -128,24 +130,25 @@ function VenderMgt(){
                                 )}
                             </td>
 
-                            <td>{item.Vid}</td>
-                            <td>{item.VenderName}</td>
-                            <td>{item.VEmail}</td>
-                            <td>{item.Status}</td>
+                            <td className="vendor-mobile-id">{item.Vid}</td>
+                            <td className="vendor-mobile-name">{item.VenderName}</td>
+                            <td className="vendor-mobile-email">{item.VEmail}</td>
+                            <td className="vendor-mobile-status">{item.Status}</td>
 
-                            <td>
+                            <td className="vendor-mobile-action">
                                <button onClick={()=>toggleStatus(item.Vid, item.Status)}>
                                 {item.Status==="Active" ? "Inactive" : "Active"}
                                </button>
                             </td>
 
-                            <td>
+                            <td className="vendor-mobile-edit">
                                <button onClick={()=>openEditModal(item)}>Edit</button>
                             </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
+            </div>
         </center>
 
         {showModal && (
@@ -154,12 +157,12 @@ function VenderMgt(){
                 backgroundColor:"rgba(0,0,0,0.5)", display:"flex",
                 justifyContent:"center", alignItems:"center"
             }}>
-                <div style={{
+                <div className="admin-modal-card" style={{
                     backgroundColor:"#fff", padding:"20px", borderRadius:"8px",
-                    minWidth:"300px"
                 }}>
 
                   <h3>Edit Vendor</h3>
+                  <div className="admin-modal-fields">
 
                   <input type="text" name="VenderName"
                   value={editForm.VenderName}
@@ -185,9 +188,12 @@ function VenderMgt(){
 
                   <input type="file" name="VPicName" onChange={handleEditChange}/><br/>
                   <br/>
+                  </div>
 
-                  <button onClick={handleEditSave}>Save</button>
-                  <button onClick={()=> setShowModal(false)}>Cancel</button>
+                  <div className="admin-modal-actions">
+                    <button onClick={handleEditSave}>Save</button>
+                    <button onClick={()=> setShowModal(false)}>Cancel</button>
+                  </div>
 
                 </div>
             </div>

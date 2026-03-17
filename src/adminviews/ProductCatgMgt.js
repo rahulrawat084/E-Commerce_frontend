@@ -2,6 +2,7 @@
 import React ,{useEffect,useState} from "react";
 import axios from "axios";
 import "./ProductCatg.css";
+import "./AdminResponsive.css";
 
 function ProductCatMgt(){
     const[pcatgid,setPCatgId] = useState();
@@ -61,46 +62,41 @@ function ProductCatMgt(){
     };
 
        return(
-        <div className="productcatg-container">
+        <div className="productcatg-container admin-card-panel">
             <h2 className="productcatg-title"> Product Category Form </h2>
 
-            <table className="productcatg-table">
-                <tbody>
-                    <tr>
-                        <td>Product Id: </td>
-                        <td>{pcatgid}</td>
-                    </tr>
-                    <tr>
-                        <td>category Name:</td>
-                        <td>
-                            <input 
-                            type="text"
-                            value={pcatgname}
-                            className="form-control"
-                            onChange={(e)=> setPCatgName(e.target.value)}/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            {
-                                isEditMode?(
-                                <button onClick={handleUpdateButton}>Update</button>
-                                ):(
-                                    <button onClick={handleSaveButton}>Save</button>
-                                )
-                            }
-                        </td>
-                        <td>
-                         <button onClick={fetchCategoryList}>Show</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div className="productcatg-form-grid">
+                <div className="productcatg-field">
+                    <label>Product Id</label>
+                    <div className="productcatg-id-box">{pcatgid}</div>
+                </div>
+
+                <div className="productcatg-field">
+                    <label>Category Name</label>
+                    <input 
+                    type="text"
+                    value={pcatgname}
+                    className="form-control"
+                    onChange={(e)=> setPCatgName(e.target.value)}/>
+                </div>
+            </div>
+
+            <div className="productcatg-actions">
+                {
+                    isEditMode ? (
+                    <button onClick={handleUpdateButton}>Update</button>
+                    ) : (
+                    <button onClick={handleSaveButton}>Save</button>
+                    )
+                }
+                <button onClick={fetchCategoryList}>Show</button>
+            </div>
 
             <h3  className="productcatg-list-title">
                 PRODUCT CATEGORY LIST
             </h3>
-            <table className="list-table">
+            <div className="admin-table-wrap">
+            <table className="list-table admin-data-table">
                 <thead>
                     <tr>
                         <th className="id">id</th>
@@ -120,6 +116,7 @@ function ProductCatMgt(){
                     ))}
                 </tbody>
             </table>
+            </div>
         </div>
        );
 }export default ProductCatMgt;

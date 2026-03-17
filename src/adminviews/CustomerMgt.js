@@ -140,8 +140,8 @@ function CustomerMgt(){
     };
 
     return(
-        <Box sx={{padding:3, position:"relative"}}>
-            <Typography variant="h4" gutterBottom>Customer Management</Typography>
+        <Box sx={{padding:{xs:1, sm:2, md:3}, position:"relative", width:"100%"}}>
+            <Typography variant="h4" gutterBottom sx={{fontSize:{xs:"1.5rem", sm:"2rem"}}}>Customer Management</Typography>
 
             {loading && (
                 <Box sx={{
@@ -153,8 +153,8 @@ function CustomerMgt(){
                 </Box>
             )}
 
-            <TableContainer component={Paper}>
-                <Table>
+            <TableContainer component={Paper} sx={{overflowX:"auto"}}>
+                <Table sx={{minWidth:560}}>
                     <TableHead>
                         <TableRow>
                             <TableCell>Customer Id</TableCell>
@@ -186,7 +186,7 @@ function CustomerMgt(){
                 </Table>
             </TableContainer>
 
-            <Dialog open={openProfile} onClose={()=> setOpenProfile(false)}>
+            <Dialog open={openProfile} onClose={()=> setOpenProfile(false)} fullWidth maxWidth="sm">
                 <DialogTitle>Customer Profile</DialogTitle>
                 <DialogContent>
                     <TextField label="Name" name="CustomerName" value={formData.CustomerName || ""}
@@ -219,7 +219,7 @@ function CustomerMgt(){
                         </Select>
                     </FormControl>
 
-                    <Box sx={{mt:2, mb:2, display:"flex", alignItems:"center", gap:2}}>
+                    <Box sx={{mt:2, mb:2, display:"flex", alignItems:{xs:"flex-start", sm:"center"}, flexDirection:{xs:"column", sm:"row"}, gap:2}}>
                         {previewImage && <Avatar src={previewImage} sx={{width:80, height:80}}/>}
                         <input type="file" onChange={handleFileChange}/>
                     </Box>

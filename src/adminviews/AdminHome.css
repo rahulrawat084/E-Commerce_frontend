@@ -1,80 +1,111 @@
-/* ================= ADMIN MAIN ================= */
 .AdimHome {
-    min-height: 100vh;
-    background: #f5f7fb;   /* soft neutral background */
-    padding: 24px;
-    font-family: "Inter", "Segoe UI", Arial, sans-serif;
-    color: #1f2937;
+  min-height: 100vh;
+  background: #f5f7fb;
+  padding: 24px 12px 40px;
+  color: #1f2937;
 }
 
-/* ================= TITLE ================= */
 .AdimHome h4 {
-    font-size: 21px;
-    font-weight: 600;
-    color: #111827;
-    margin-bottom: 18px;
-    letter-spacing: 0.3px;
+  font-size: 21px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 18px;
+  letter-spacing: 0.3px;
 }
 
-/* ================= BUTTON PANEL ================= */
-.AdimHome center > div {
-    background: #ffffff;
-    padding: 16px 18px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;              /* 👈 button gap thoda kam */
-    box-shadow: 
-        0 8px 20px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e5e7eb;
-    margin-bottom: 28px;
+.admin-dashboard-panel {
+  background: #ffffff;
+  padding: 16px 18px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  margin: 0 auto 28px;
+  width: min(1200px, 100%);
 }
 
-/* ================= COMMON BUTTON ================= */
 .AdimHome button {
-    min-width: 110px;
-    padding: 9px 16px;
-    font-size: 13.5px;
-    font-weight: 500;
-    border-radius: 7px;
-    border: 1px solid #d1d5db;
-    background: #f9fafb;     /* flat & clean */
-    color: #1f2937;
-    cursor: pointer;
-    transition: 
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.15s ease,
-        box-shadow 0.25s ease;
+  min-width: 110px;
+  padding: 10px 16px;
+  font-size: 13.5px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  color: #1f2937;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
 }
 
-/* ================= HOVER ================= */
 .AdimHome button:hover {
-    background: #2563eb;     /* professional blue */
-    color: #ffffff;
-    border-color: #2563eb;
-    box-shadow: 
-        0 6px 14px rgba(37, 99, 235, 0.35);
-    transform: translateY(-1px);
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
+  transform: translateY(-1px);
 }
 
-/* ================= CLICK ================= */
 .AdimHome button:active {
-    transform: scale(0.97);
+  transform: scale(0.97);
 }
 
-/* ================= LOGOUT BUTTON ================= */
+.admin-active-btn {
+  background: #2563eb !important;
+  color: #fff !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
+}
+
+.admin-section-shell {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 16px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  overflow-x: auto;
+}
+
 .BUTTONlogout {
-    background: #fff5f5;
-    border-color: #fecaca;
-    color: #991b1b;
+  background: #fff5f5;
+  border-color: #fecaca;
+  color: #991b1b;
 }
 
 .BUTTONlogout:hover {
-    background: #dc2626;
-    color: #ffffff;
-    border-color: #dc2626;
-    box-shadow: 
-        0 6px 14px rgba(220, 38, 38, 0.35);
+  background: #dc2626;
+  color: #ffffff;
+  border-color: #dc2626;
+  box-shadow: 0 6px 14px rgba(220, 38, 38, 0.35);
+}
+
+@media (max-width: 640px) {
+  .admin-dashboard-panel {
+    padding: 14px 12px;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .AdimHome button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .admin-section-shell {
+    padding: 12px 8px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  .admin-dashboard-panel {
+    justify-content: stretch;
+  }
+
+  .admin-section-shell table {
+    min-width: 640px;
+  }
 }

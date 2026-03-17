@@ -1,167 +1,255 @@
-/* Main Container */
 .productcatg-container {
-    max-width: 900px;
-    margin: 30px auto;
-    background: #ffffff;
-    padding: 25px 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    font-family: "Segoe UI", Tahoma, sans-serif;
+  max-width: 900px;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  font-family: "Segoe UI", Tahoma, sans-serif;
 }
 
-/* Title */
 .productcatg-title {
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 26px;
-    font-weight: 700;
-    color: #2874f0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  text-align: center;
+  margin: 0 0 22px;
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+  font-weight: 700;
+  color: #2874f0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Form Table */
-.productcatg-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 30px;
+.productcatg-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
 }
 
-.productcatg-table td {
-    padding: 12px 10px;
-    font-size: 16px;
-    color: #333;
+.productcatg-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
 }
 
-/* Input Field */
-.productcatg-table .form-control {
-    width: 100%;
-    padding: 10px 12px;
-    border-radius: 6px;
-    border: 2px solid #ddd;
-    font-size: 15px;
-    transition: all 0.3s ease;
+.productcatg-field label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #334155;
 }
 
-.productcatg-table .form-control:focus {
-    border-color: #2874f0;
-    outline: none;
-    box-shadow: 0 0 8px rgba(40,116,240,0.3);
+.productcatg-id-box {
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border: 2px solid #dbe4f0;
+  border-radius: 10px;
+  background: #f8fbff;
+  color: #1e3a8a;
+  font-weight: 700;
 }
 
-/* Buttons (Save / Update / Show) */
-.productcatg-table button {
-    background: linear-gradient(135deg, #2874f0, #0f5ad3);
-    color: #fff;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+.productcatg-container .form-control {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  font-size: 15px;
+  transition: all 0.3s ease;
 }
 
-.productcatg-table button:hover {
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 6px 15px rgba(40,116,240,0.4);
+.productcatg-container .form-control:focus {
+  border-color: #2874f0;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(40, 116, 240, 0.12);
 }
 
-/* List Title */
+.productcatg-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.productcatg-actions button {
+  background: linear-gradient(135deg, #2874f0, #0f5ad3);
+  color: #fff;
+  border: none;
+  padding: 11px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.productcatg-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(40, 116, 240, 0.3);
+}
+
 .productcatg-list-title {
-    text-align: center;
-    margin: 30px 0 15px;
-    font-size: 22px;
-    font-weight: 700;
-    color: #333;
+  text-align: center;
+  margin: 10px 0 15px;
+  font-size: clamp(1.1rem, 2.4vw, 1.45rem);
+  font-weight: 700;
+  color: #333;
 }
 
-/* List Table */
 .list-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fafafa;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  background: #fafafa;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-/* Table Head */
 .list-table thead {
-    background: #2874f0;
+  background: #2874f0;
 }
 
 .list-table th {
-    padding: 12px;
-    color: #fff;
-    font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  padding: 12px;
+  color: #fff;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-/* Table Body */
 .list-table td {
-    padding: 12px;
-    font-size: 15px;
-    color: #333;
-    border-bottom: 1px solid #e0e0e0;
-    text-align: center;
+  padding: 12px;
+  font-size: 15px;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: center;
 }
 
-/* Column Width */
 .list-table .id {
-    width: 80px;
-    font-weight: bold;
+  width: 80px;
+  font-weight: bold;
 }
 
 .list-table .name {
-    font-weight: 600;
-    color: #212121;
+  font-weight: 600;
+  color: #212121;
 }
 
-/* Row Hover Effect */
 .list-table tbody tr {
-    transition: all 0.3s ease;
+  transition: background 0.25s ease;
 }
 
 .list-table tbody tr:hover {
-    background: #e3f2fd;
-    transform: scale(1.01);
+  background: #e3f2fd;
 }
 
-/* Action Button */
 .list-table .act {
-    background: linear-gradient(135deg, #ff9800, #f57c00);
-    color: #fff;
-    border: none;
-    padding: 6px 14px;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  background: linear-gradient(135deg, #ff9800, #f57c00);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .list-table .act:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(245,124,0,0.5);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(245, 124, 0, 0.35);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-    .productcatg-container {
-        padding: 18px;
-    }
+  .productcatg-container {
+    padding: 18px 14px;
+  }
 
-    .productcatg-title {
-        font-size: 22px;
-    }
+  .productcatg-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
-    .productcatg-list-title {
-        font-size: 18px;
-    }
+@media (max-width: 480px) {
+  .productcatg-container {
+    padding: 14px 10px;
+  }
 
-    .list-table th,
-    .list-table td {
-        font-size: 14px;
-    }
+  .productcatg-actions {
+    flex-direction: column;
+  }
+
+  .productcatg-actions button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .list-table {
+    min-width: 500px;
+  }
+}
+
+@media (max-width: 640px) {
+  .list-table thead {
+    display: none;
+  }
+
+  .list-table,
+  .list-table tbody,
+  .list-table tr,
+  .list-table td {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .list-table {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .list-table tr {
+    margin-bottom: 12px;
+    background: #fafafa;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+  }
+
+  .list-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    text-align: left;
+  }
+
+  .list-table td::before {
+    font-weight: 700;
+    color: #1e3a8a;
+    flex-shrink: 0;
+  }
+
+  .list-table td.id::before {
+    content: "ID";
+  }
+
+  .list-table td.name::before {
+    content: "Category";
+  }
+
+  .list-table td:last-child::before {
+    content: "Action";
+  }
+
+  .list-table .act {
+    width: auto;
+    min-width: 88px;
+  }
 }

@@ -5,6 +5,7 @@
    import ReactDOM from "react-dom/client";
    import Bill from "../customerviews/Bill";
    import "./ProductList.css";
+   import "./AdminSections.css";
     function ProductList(props)
     {
          const [itemcount,setItemCount] = useState(0);
@@ -139,15 +140,15 @@
                  }
 
                  return(
-                    <div className="ProDiv">
+                    <div className="ProDiv admin-section-card">
                        <center>
                        <h1> Search By Category </h1>
+                        <div className="admin-filter-row">
                         <select onClick={handleSearch}>
                             <option value="0">All</option>
                             {
                                 pcatglist.map((pcatgitem) => (
                                     <option key={pcatgitem.pcatgid} value={pcatgitem.pcatgid}>{pcatgitem.pcatgname}</option>
-                                    // <option value={pcatgitem.pcatgid}>{pcatgitem.pcatgname}</option>
                                 ))
                             }
                         </select>
@@ -158,7 +159,6 @@
                                 {
                                    vlist.map((vitem) =>(
                                     <option   key={vitem.Vid} value={vitem.Vid}>{vitem.VenderName}</option>
-                                    // <option  value={vitem.Vid}>{vitem.VenderName}</option>
                                    ))
                                 }
                             </select>
@@ -172,8 +172,10 @@
                                 <option value="Inactive">Inactive</option>
                             </select>
                         </p>
+                        </div>
 
                       <p style={{backgroundColor:"green",color:"white"}}>Product List</p> 
+                      <div className="admin-table-scroll">
                       <table border={1} className="borrdrer">
                         <thead>
                         <tr >
@@ -224,7 +226,8 @@
                             ))
                         }
                         </tbody>
-                        </table> 
+                        </table>
+                        </div>
                        </center>
                     </div>
                  );

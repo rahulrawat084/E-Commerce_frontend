@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import axios from "axios";
 import "./State.css";
+import "./AdminResponsive.css";
 
 
 
@@ -139,13 +140,14 @@ import "./State.css";
        }
 
        return (
-  <div>
+  <div className="admin-screen-shell">
     <center>
-      <h6 style={{fontSize:"30px", color:"red", backgroundColor:"wheat"}}>STATE MANAGMENT</h6>
+      <h6 className="admin-screen-title">STATE MANAGMENT</h6>
 
-      <div className="stateBox_guru">
+      <div className="stateBox_guru admin-card-panel">
         <center>
-          <table>
+          <div className="admin-form-wrap">
+          <table className="admin-form-table">
             <tr>
               <td className="stateLabel_id_guru">STATE ID</td>
               <td>
@@ -185,23 +187,21 @@ import "./State.css";
             <tr></tr>
             <tr></tr>
           </table>
+          </div>
 
-          <table>
-            <tr>
-   <td><button type="submit" onClick={handleAddNewButton} className="btn-new_guru">NEW</button></td>
-<td><button type="submit" onClick={handleSaveButton} className="btn-save_guru">SAVE</button></td>
-<td><button type="submit" onClick={handleShowButton} className="btn-show_guru">SHOW</button></td>
-<td><button type="submit" onClick={handleUpdateButton} className="btn-update_guru">UPDATE</button></td>
-<td><button type="submit" onClick={handleDeleteButton} className="btn-delete_guru">DELETE</button></td>
-
-            </tr>
-          </table>
+          <div className="admin-actions-row">
+            <button type="submit" onClick={handleAddNewButton} className="btn-new_guru">NEW</button>
+            <button type="submit" onClick={handleSaveButton} className="btn-save_guru">SAVE</button>
+            <button type="submit" onClick={handleShowButton} className="btn-show_guru">SHOW</button>
+            <button type="submit" onClick={handleUpdateButton} className="btn-update_guru">UPDATE</button>
+            <button type="submit" onClick={handleDeleteButton} className="btn-delete_guru">DELETE</button>
+          </div>
         </center>
       </div>
 
-      <div className="stateBox_table_guru">
+      <div className="stateBox_table_guru admin-card-panel admin-table-wrap">
         <center>
-          <table>
+          <table className="admin-data-table state-data-table">
             <tr>
               <th className="stateCol_id_guru">STATE ID</th>
               <th className="stateCol_name_guru">STATE NAME</th>
@@ -211,9 +211,9 @@ import "./State.css";
             {
               stlist.map((item) => (
                 <tr key={item.stid}>
-                  <td className="stateCol_id_guru">{item.stid}</td>
-                  <td className="stateCol_name_guru">{item.stname}</td>
-                  <td className="stateCol_status_guru">
+                  <td className="stateCol_id_guru state-mobile-id">{item.stid}</td>
+                  <td className="stateCol_name_guru state-mobile-name">{item.stname}</td>
+                  <td className="stateCol_status_guru state-mobile-status">
                     {item.status == 1 ? <h5>enable</h5> : <h5>disable</h5>}
                   </td>
                 </tr>

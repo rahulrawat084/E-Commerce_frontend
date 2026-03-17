@@ -2,6 +2,7 @@ import React,{ useState, useEffect } from "react";
 import axios from "axios";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
+import "./AdminSections.css";
 // import "./ShowBills.css";
 // import { resolve } from "node:dns";
 
@@ -183,9 +184,10 @@ function ShowBills(){
     };
 
     return(
-        <div>
+        <div className="admin-section-card">
             <center>
                 <h2>Bill List (Admin View)</h2>
+                <div className="admin-filter-row">
                 <table>
                     <tbody>
                         <tr>
@@ -203,8 +205,10 @@ function ShowBills(){
                         </tr>
                     </tbody>
                 </table>
+                </div>
                 {billdetailslist.length > 0 ? (
                     <>
+                    <div className="admin-table-scroll">
                     <table border={1} cellPadding={6} style={{marginTop:"20px"}}>
                         <thead style={{backgroundColor:"#ddd"}}>
                             <tr>
@@ -258,8 +262,10 @@ function ShowBills(){
                             </tr>
                         </tbody>
                     </table>
+                    </div>
 
                     {/* PDF Button */}
+                    <div className="admin-stack-actions">
                     <button onClick={downloadPDF} disabled={loadingPDF}
                     style={{
                         marginTop:"20px",
@@ -290,6 +296,7 @@ function ShowBills(){
                             100% { transform: rotate(360deg);}}`}
                         </style>
                     </button>
+                    </div>
                     </>
                 ) : (
                     <p style={{marginTop:"20px", color:"gray"}}>No bills to display.</p>
@@ -297,7 +304,7 @@ function ShowBills(){
 
                 {/* Pagination */}
                 {totalPages>1 && (
-                    <div style={{marginTop:"20px"}}>
+                    <div className="admin-stack-actions" style={{marginTop:"20px"}}>
                         <button disabled={currentPage===1} onClick={()=> setCurrentPage(currentPage-1)}>
                             Prev
                         </button>

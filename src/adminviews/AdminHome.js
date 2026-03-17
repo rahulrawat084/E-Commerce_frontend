@@ -1,76 +1,90 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import StateMgt from "./StateMgt";
+import CityMgt from "./CityMgt";
+import ProductCatMgt from "./ProductCatgMgt";
+import VenderMgt from "./VenderMgt";
+import ShowBills from "./ShowBills";
+import ProductList from "./ProductList";
+import CustomerMgt from "./CustomerMgt";
+import UpdateOrderStatus from "./UpdateOrderStatus";
+import AdminVenderSales from "./AdminVendorSales";
+import "./AdminHome.css";
 
- import React,{useState} from "react";
- import { useNavigate } from "react-router-dom";
- import StateMgt from "./StateMgt";
- import CityMgt from "./CityMgt";
- import ProductCatMgt from "./ProductCatgMgt";
- import VenderMgt from "./VenderMgt";
- import "../index.css";
- import ShowBills from "./ShowBills";
- import ProductList from "./ProductList";
- import CustomerMgt from "./CustomerMgt";
- import UpdateOrderStatus from "./UpdateOrderStatus";
- import AdminVenderSales from "./AdminVendorSales";
+function AdminHome() {
+  const [activeSection, setActiveSection] = useState("");
+  const navigate = useNavigate();
 
- import "./AdminHome.css";
- 
+  const toggleSection = (sectionName) => {
+    setActiveSection((prev) => (prev === sectionName ? "" : sectionName));
+  };
 
- function AdminHome()
- {
-    const [isstateshow,setIsStateShow] = useState(false);
-    const [iscityshow,setIsCityShow] = useState(false);
-    const [ispcatgshow,setIsPCatgShow] = useState(false);
-    const [isvendershow,setIsVenderShow] = useState(false);
-    const [isbillshow,setIsBillShow] = useState(false);
-    const [isproductlistshow,setIsProductListShow] = useState(false);
-    const [iscustomershow,setIsCustomerShow] = useState(false);
-    const [isupdateordershow,setIsUpdateOrderShow] = useState(false);
-    const [isvendersalesshow,setIsVenderSalesShow] = useState(false);
-    const navigate = useNavigate();
+  const logOutButtonClick = () => {
+    localStorage.removeItem("admintoken");
+    navigate("/adminmain/adminlogin");
+  };
 
-    function LogOutButtonClick()
-    {
-        localStorage.removeItem("admintoken");
-        navigate("/adminmain/adminlogin");
-    }
+  return (
+    <div className="AdimHome">
+      <center>
+        <h4>Admin DashBoard</h4>
 
-    return(
-        <div className="AdimHome">
-            <center>
-                <h4>Admin DashBoard</h4>
-                <div style={{backgroundColor:"gray"}}>
-                    <button onClick={() => setIsStateShow(!isstateshow)} className="BUTTONstate">State</button>
+        <div className="admin-dashboard-panel">
+          <button onClick={() => toggleSection("state")} className={activeSection === "state" ? "admin-active-btn" : ""}>
+            State
+          </button>
 
-     <button onClick={() => setIsCityShow(!iscityshow)} className="BUTTONcity" style={{marginLeft:10}}>City</button> 
+          <button onClick={() => toggleSection("city")} className={activeSection === "city" ? "admin-active-btn" : ""}>
+            City
+          </button>
 
-      <button onClick={() => setIsPCatgShow(!ispcatgshow)} className="BUTTONpcatg" style={{marginLeft:10}}>Category</button> 
+          <button onClick={() => toggleSection("category")} className={activeSection === "category" ? "admin-active-btn" : ""}>
+            Category
+          </button>
 
-      <button onClick={() => setIsVenderShow(!isvendershow)} className="BUTTONvender" style={{marginLeft:10}}>Vender</button> 
+          <button onClick={() => toggleSection("vender")} className={activeSection === "vender" ? "admin-active-btn" : ""}>
+            Vender
+          </button>
 
-     <button onClick={() => setIsBillShow(!isbillshow)} className="BUTTONbill" style={{marginLeft:10}}>Bills</button> 
+          <button onClick={() => toggleSection("bills")} className={activeSection === "bills" ? "admin-active-btn" : ""}>
+            Bills
+          </button>
 
-     <button onClick={() => setIsUpdateOrderShow(!isupdateordershow)} className="BUTTONupdate" style={{marginLeft:10}}>Order Status</button> 
+          <button onClick={() => toggleSection("order-status")} className={activeSection === "order-status" ? "admin-active-btn" : ""}>
+            Order Status
+          </button>
 
-     <button onClick={() => setIsProductListShow(!isproductlistshow)} className="BUTTONproduct" style={{marginLeft:10}}>Product</button> 
+          <button onClick={() => toggleSection("product")} className={activeSection === "product" ? "admin-active-btn" : ""}>
+            Product
+          </button>
 
-     <button onClick={() => setIsCustomerShow(!iscustomershow)} className="BUTTONcustomer" style={{marginLeft:10}}>Customer</button> 
+          <button onClick={() => toggleSection("customer")} className={activeSection === "customer" ? "admin-active-btn" : ""}>
+            Customer
+          </button>
 
-     <button onClick={() => setIsVenderSalesShow(!isvendersalesshow)} className="BUTTONvensale" style={{marginLeft:10}}>Vender Sales</button> 
-      
-     <button onClick={LogOutButtonClick} className="BUTTONlogout" style={{marginLeft:10}}>Logout</button>
-                </div>
+          <button onClick={() => toggleSection("vender-sales")} className={activeSection === "vender-sales" ? "admin-active-btn" : ""}>
+            Vender Sales
+          </button>
 
-                {isstateshow && <StateMgt/>}
-                {iscityshow && <CityMgt/>}
-                {ispcatgshow && <ProductCatMgt/>}
-                {isvendershow && <VenderMgt/>}
-                {isbillshow && <ShowBills/>}
-                {isproductlistshow && <ProductList/>}
-                {iscustomershow && <CustomerMgt/>}
-                {isupdateordershow && <UpdateOrderStatus updateByName={"Admin"}/>}
-                {isvendersalesshow && <AdminVenderSales/>}
-            </center>
+          <button onClick={logOutButtonClick} className="BUTTONlogout">
+            Logout
+          </button>
         </div>
-    )
- }
-  export default AdminHome;
+
+        <div className="admin-section-shell">
+          {activeSection === "state" && <StateMgt />}
+          {activeSection === "city" && <CityMgt />}
+          {activeSection === "category" && <ProductCatMgt />}
+          {activeSection === "vender" && <VenderMgt />}
+          {activeSection === "bills" && <ShowBills />}
+          {activeSection === "product" && <ProductList />}
+          {activeSection === "customer" && <CustomerMgt />}
+          {activeSection === "order-status" && <UpdateOrderStatus updateByName="Admin" />}
+          {activeSection === "vender-sales" && <AdminVenderSales />}
+        </div>
+      </center>
+    </div>
+  );
+}
+
+export default AdminHome;

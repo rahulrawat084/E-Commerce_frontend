@@ -1,0 +1,87 @@
+.admin-section-card {
+  width: min(100%, 1100px);
+  margin: 0 auto 20px;
+  padding: 16px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.admin-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.admin-filter-row label,
+.admin-filter-row p,
+.admin-filter-row h1,
+.admin-filter-row h2,
+.admin-filter-row h3,
+.admin-filter-row h4 {
+  margin: 0;
+}
+
+.admin-filter-row select,
+.admin-filter-row input {
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+}
+
+.admin-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-table-scroll table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.admin-table-scroll img {
+  max-width: 100%;
+  height: auto;
+}
+
+.admin-stack-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.admin-stack-actions button {
+  min-height: 42px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .admin-section-card {
+    padding: 12px 8px;
+  }
+
+  .admin-filter-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-filter-row select,
+  .admin-filter-row input,
+  .admin-stack-actions button {
+    width: 100%;
+  }
+
+  .admin-table-scroll table {
+    min-width: 620px;
+  }
+}

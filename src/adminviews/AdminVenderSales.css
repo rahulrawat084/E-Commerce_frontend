@@ -4,6 +4,8 @@
   background: #f5f7fb;
   font-family: "Segoe UI", sans-serif;
   color: #2f3640;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* ================= HEADINGS ================= */
@@ -33,6 +35,10 @@
 
 .vendor-sales-page input {
   width: 180px;
+}
+
+.vendor-sales-page table {
+  min-width: 640px;
 }
 
 /* ================= BUTTONS ================= */
@@ -157,4 +163,34 @@
 .popup-buttons {
   margin-top: 15px;
   text-align: right;
+}
+
+@media (max-width: 768px) {
+  .vendor-sales-page {
+    padding: 12px 6px;
+  }
+
+  .vendor-sales-page select,
+  .vendor-sales-page input,
+  .vendor-sales-page button {
+    width: 100%;
+    margin: 0 0 8px;
+  }
+
+  .popup-content {
+    width: 94%;
+    padding: 14px;
+  }
+
+  .popup-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .popup-buttons {
+    display: grid;
+    gap: 8px;
+    text-align: initial;
+  }
 }

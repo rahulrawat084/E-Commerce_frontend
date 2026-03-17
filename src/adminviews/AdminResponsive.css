@@ -1,0 +1,191 @@
+.admin-screen-shell {
+  width: 100%;
+}
+
+.admin-screen-title {
+  margin: 0 0 18px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #fff4df;
+  color: #b42318;
+  font-size: clamp(1.2rem, 3vw, 1.9rem);
+  text-align: center;
+}
+
+.admin-card-panel {
+  width: min(100%, 960px);
+  margin: 0 auto 22px;
+}
+
+.admin-form-wrap,
+.admin-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-form-table,
+.admin-data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-form-table td,
+.admin-form-table th,
+.admin-data-table td,
+.admin-data-table th {
+  word-break: break-word;
+}
+
+.admin-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.admin-actions-row button {
+  min-height: 42px;
+}
+
+.admin-data-table {
+  min-width: 620px;
+}
+
+.admin-modal-card {
+  width: min(92vw, 420px);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.admin-modal-fields {
+  display: grid;
+  gap: 10px;
+}
+
+.admin-modal-fields input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+.admin-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.admin-modal-actions button {
+  flex: 1 1 140px;
+}
+
+@media (max-width: 640px) {
+  .admin-screen-title {
+    margin-bottom: 14px;
+    padding: 10px 12px;
+  }
+
+  .admin-form-table,
+  .admin-form-table tbody,
+  .admin-form-table tr,
+  .admin-form-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .admin-form-table tr {
+    margin-bottom: 10px;
+  }
+
+  .admin-form-table td {
+    padding-bottom: 6px;
+    text-align: left;
+  }
+
+  .admin-form-table td:first-child {
+    font-weight: 700;
+  }
+
+  .admin-actions-row {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .admin-actions-row button {
+    width: 100%;
+  }
+
+  .admin-data-table {
+    min-width: 520px;
+  }
+
+  .vendor-data-table {
+    min-width: 0 !important;
+  }
+
+  .vendor-data-table thead {
+    display: none;
+  }
+
+  .vendor-data-table,
+  .vendor-data-table tbody,
+  .vendor-data-table tr,
+  .vendor-data-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .vendor-data-table tr {
+    margin-bottom: 12px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .vendor-data-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    text-align: left;
+  }
+
+  .vendor-data-table td::before {
+    font-weight: 700;
+    color: #1d4ed8;
+    flex-shrink: 0;
+  }
+
+  .vendor-mobile-photo::before {
+    content: "Photo";
+  }
+
+  .vendor-mobile-id::before {
+    content: "Vendor ID";
+  }
+
+  .vendor-mobile-name::before {
+    content: "Vendor";
+  }
+
+  .vendor-mobile-email::before {
+    content: "Email";
+  }
+
+  .vendor-mobile-status::before {
+    content: "Status";
+  }
+
+  .vendor-mobile-action::before {
+    content: "Action";
+  }
+
+  .vendor-mobile-edit::before {
+    content: "Edit";
+  }
+}

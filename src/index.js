@@ -20,7 +20,6 @@ import CustomerReg from './customerviews/CustomerReg';
  import Product from './productviews/Product';
  
  import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
